@@ -9,21 +9,20 @@ const csso = require('gulp-csso');
 const rename = require('gulp-rename');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
+const concat = require('gulp-concat');
 
 gulp.task('build', ['build:js', 'build:stylus']);
 
 gulp.task('build:js', () => {
     return gulp.src([
+        config.paths.src.libs + '/d3.js-4.7.0/d3.min.js',
         config.paths.src.js + '/*.js'
     ])
     .pipe(plumber({
         errorHandler: notify.onError('Error: <%= error.message %>')
     }))
+    .pipe(concat('study-d3.js.js'))
     .pipe(uglify())
-    .pipe(rename({
-        basename: 'study-d3.js',
-        extname: '.js'
-    }))
     .pipe(gulp.dest(config.paths.dst.js));
 });
 
