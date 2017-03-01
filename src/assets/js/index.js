@@ -15,9 +15,10 @@
 
     _fn.init = function () {
         var paragraphs,
-            paragraph;
+            paragraph,
+            p;
 
-        paragraphs = window.document.getElementsByTagName('p');
+        // paragraphs = window.document.getElementsByTagName('p');
         // for (var i = 0; i < paragraphs.length; i++) {
         //     paragraph = paragraphs.item(i);
         //     paragraph.style.setProperty('color', 'white', null);
@@ -36,11 +37,19 @@
         //     return i % 2 ? '#fff' : '#eee';
         // });
 
-        d3.selectAll('p')
+        // d3.selectAll('p')
+        //     .data([4, 8, 15, 16, 23, 42])
+        //     .style('font-size', function (d) {
+        //         console.log(d);
+        //         return d + 'px';
+        //     });
+
+        d3.select('body')
+            .selectAll('p')
             .data([4, 8, 15, 16, 23, 42])
-            .style('font-size', function (d) {
-                console.log(d);
-                return d + 'px';
+            .enter().append('p')
+            .text(function (d) {
+                return "I'm number " + d + '!';
             });
     };
 
