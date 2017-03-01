@@ -18,10 +18,11 @@
             paragraph;
 
         paragraphs = window.document.getElementsByTagName('p');
-        for (var i = 0; i < paragraphs.length; i++) {
-            paragraph = paragraphs.item(i);
-            paragraph.style.setProperty('color', 'white', null);
-        }
+        // for (var i = 0; i < paragraphs.length; i++) {
+        //     paragraph = paragraphs.item(i);
+        //     paragraph.style.setProperty('color', 'white', null);
+        // }
+        d3.selectAll('p').style('color', 'white');
     };
 
     fn.init();
