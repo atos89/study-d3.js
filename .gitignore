@@ -1,0 +1,6 @@
+/node_modules/
+/httpdocs/assets/*
+/data/templates_c/*
+
+!/httpdocs/assets/.gitkeep
+!/data/templates_c/.gitkeep
