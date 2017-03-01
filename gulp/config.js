@@ -5,7 +5,8 @@ const paths = {
         root: './src',
         assets: './src/assets',
         js: './src/assets/js',
-        stylus: './src/assets/stylus'
+        stylus: './src/assets/stylus',
+        libs: './src/assets/libs'
     },
     dst: {
         root: './httpdocs',
