@@ -14,7 +14,14 @@
     };
 
     _fn.init = function () {
+        var paragraphs,
+            paragraph;
 
+        paragraphs = window.document.getElementsByTagName('p');
+        for (var i = 0; i < paragraphs.length; i++) {
+            paragraph = paragraphs.item(i);
+            paragraph.style.setProperty('color', 'white', null);
+        }
     };
 
     fn.init();
